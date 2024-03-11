@@ -4,6 +4,8 @@ import com.helloworld.babel.model.Account;
 import com.helloworld.babel.model.Transference;
 import com.helloworld.babel.service.IAccountService;
 import com.helloworld.babel.service.ITransferenceService;
+import com.helloworld.babel.service.impl.AccountService;
+import com.helloworld.babel.utils.LogUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.ParameterizedMessage;
@@ -20,7 +22,7 @@ public class ApplicationController {
 
     private IAccountService accountService;
     private ITransferenceService transferenceService;
-    private static final Logger logger = LogManager.getLogger(ApplicationController.class);
+    private static final Logger logger = LogUtils.getLogger(ApplicationController.class);
 
     public ApplicationController(IAccountService accountService, ITransferenceService transferenceService) {
         this.accountService = accountService;

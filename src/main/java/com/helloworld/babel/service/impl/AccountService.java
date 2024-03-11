@@ -4,6 +4,7 @@ import com.helloworld.babel.model.Account;
 import com.helloworld.babel.model.Transference;
 import com.helloworld.babel.repository.IAccountRepository;
 import com.helloworld.babel.service.IAccountService;
+import com.helloworld.babel.utils.LogUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.ParameterizedMessage;
@@ -22,7 +23,7 @@ public class AccountService implements IAccountService {
         this.accountRepository = accountRepository;
     }
 
-    private static final Logger logger = LogManager.getLogger(AccountService.class);
+    private static final Logger logger = LogUtils.getLogger(AccountService.class);
 
     @Override
     public String createAccount(String userName) {

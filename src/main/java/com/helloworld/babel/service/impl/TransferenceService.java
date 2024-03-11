@@ -5,6 +5,7 @@ import com.helloworld.babel.model.Transference;
 import com.helloworld.babel.repository.IAccountRepository;
 import com.helloworld.babel.repository.ITransferenceRepository;
 import com.helloworld.babel.service.ITransferenceService;
+import com.helloworld.babel.utils.LogUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class TransferenceService implements ITransferenceService {
     private double BASE_INTEREST = 3.99;
     private ITransferenceRepository transferenceRepository;
     private IAccountRepository accountRepository;
-    private static final Logger logger = LogManager.getLogger(TransferenceService.class);
+    private static final Logger logger = LogUtils.getLogger(TransferenceService.class);
 
     public TransferenceService(ITransferenceRepository transferenceRepository, IAccountRepository accountRepository) {
         this.transferenceRepository = transferenceRepository;
