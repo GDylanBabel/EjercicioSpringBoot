@@ -4,6 +4,8 @@ import com.helloworld.babel.model.Account;
 import com.helloworld.babel.model.Transference;
 import com.helloworld.babel.repository.IAccountRepository;
 import com.helloworld.babel.service.IAccountService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,12 +20,15 @@ public class AccountService implements IAccountService {
         this.accountRepository = accountRepository;
     }
 
+    private static final Logger logger = LogManager.getLogger(AccountService.class);
+
     @Override
     public String createAccount(String userName) {
         Account account = new Account();
         account.setUserName(userName);
         account.setAccountNumber(UUID.randomUUID().toString());
         this.accountRepository.save(account);
+        logger.info("Se ha creado una cuenta nueva");
         return account.getAccountNumber();
     }
 

@@ -4,6 +4,8 @@ import com.helloworld.babel.model.Account;
 import com.helloworld.babel.model.Transference;
 import com.helloworld.babel.service.IAccountService;
 import com.helloworld.babel.service.ITransferenceService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +19,7 @@ public class ApplicationController {
 
     private IAccountService accountService;
     private ITransferenceService transferenceService;
+    private static final Logger logger = LogManager.getLogger(ApplicationController.class);
 
     public ApplicationController(IAccountService accountService, ITransferenceService transferenceService) {
         this.accountService = accountService;
@@ -32,6 +35,10 @@ public class ApplicationController {
     public String createUserTransference(@RequestParam String sender, @RequestParam String reciever, @RequestParam double amount) {
         Account accountSender = getAccountByCode(sender);
         Account accountReciever = getAccountByCode(reciever);
+        if (accountSender == null || accountReciever == null) {
+            logger.info("Intento de transferencia con cuentas inexistentes");
+            return "Error, cuenta no existente";
+        }
         this.transferenceService.makeTransference(accountSender, accountReciever, amount);
         return "Transferencia creada";
     }
