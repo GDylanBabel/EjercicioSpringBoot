@@ -2,6 +2,7 @@ package com.helloworld.babel.service.impl;
 
 import com.helloworld.babel.model.Account;
 import com.helloworld.babel.model.Transference;
+import com.helloworld.babel.repository.IAccountRepository;
 import com.helloworld.babel.repository.ITransferenceRepository;
 import com.helloworld.babel.service.ITransferenceService;
 import org.apache.logging.log4j.LogManager;
@@ -17,10 +18,12 @@ public class TransferenceService implements ITransferenceService {
 
     private double BASE_INTEREST = 3.99;
     private ITransferenceRepository transferenceRepository;
+    private IAccountRepository accountRepository;
     private static final Logger logger = LogManager.getLogger(TransferenceService.class);
 
-    public TransferenceService(ITransferenceRepository transferenceRepository) {
+    public TransferenceService(ITransferenceRepository transferenceRepository, IAccountRepository accountRepository) {
         this.transferenceRepository = transferenceRepository;
+        this.accountRepository = accountRepository;
     }
 
     @Override
@@ -66,6 +69,10 @@ public class TransferenceService implements ITransferenceService {
         transference.setAmount(amount);
         transference.setConcept(concept);
         transference.setCode(UUID.randomUUID().toString());
+        sender.setIncome(sender.getIncome() - amount);
+        reciever.setIncome(reciever.getIncome() + amount);
         this.transferenceRepository.save(transference);
+        this.accountRepository.save(sender);
+        this.accountRepository.save(reciever);
     }
 }

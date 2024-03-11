@@ -1,3 +1,37 @@
-2024-03-11T12:37:11.572+0100 2024-03-11 12:37:11,572 [INFO] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-03-11T12:37:11.572+0100 2024-03-11 12:37:11,572 [INFO] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-03-11T12:37:11.573+0100 2024-03-11 12:37:11,573 [INFO] DispatcherServlet - Completed initialization in 1 ms
+2024-03-11T13:01:46.847+0100 2024-03-11 13:01:46,847 [INFO] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-11T13:01:47.109+0100 2024-03-11 13:01:47,109 [INFO] HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-11T13:01:47.171+0100 2024-03-11 13:01:47,171 [INFO] HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-11T13:02:00.430+0100 2024-03-11 13:02:00,430 [INFO] EjercicioBancoSpringApplication - Starting EjercicioBancoSpringApplication using Java 17.0.10 with PID 7512 (C:\Users\guillermo.carvajal\Desktop\Documentos\Proyectos\ejercicio-spring-boot\target\classes started by guillermo.carvajal in C:\Users\guillermo.carvajal\Desktop\Documentos\Proyectos\ejercicio-spring-boot)
+2024-03-11T13:02:00.464+0100 2024-03-11 13:02:00,464 [INFO] EjercicioBancoSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-11T13:02:02.240+0100 2024-03-11 13:02:02,240 [INFO] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-11T13:02:02.394+0100 2024-03-11 13:02:02,394 [INFO] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 2 JPA repository interfaces.
+2024-03-11T13:02:04.180+0100 2024-03-11 13:02:04,180 [INFO] TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-11T13:02:04.212+0100 2024-03-11 13:02:04,212 [INFO] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-11T13:02:04.217+0100 2024-03-11 13:02:04,217 [INFO] StandardService - Starting service [Tomcat]
+2024-03-11T13:02:04.218+0100 2024-03-11 13:02:04,218 [INFO] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-11T13:02:04.381+0100 2024-03-11 13:02:04,381 [INFO] [/] - Initializing Spring embedded WebApplicationContext
+2024-03-11T13:02:04.384+0100 2024-03-11 13:02:04,384 [INFO] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3783 ms
+2024-03-11T13:02:04.510+0100 2024-03-11 13:02:04,510 [INFO] HikariDataSource - HikariPool-1 - Starting...
+2024-03-11T13:02:05.093+0100 2024-03-11 13:02:05,093 [INFO] HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:/data/demo user=SA
+2024-03-11T13:02:05.096+0100 2024-03-11 13:02:05,096 [INFO] HikariDataSource - HikariPool-1 - Start completed.
+2024-03-11T13:02:05.117+0100 2024-03-11 13:02:05,117 [INFO] H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:/data/demo'
+2024-03-11T13:02:05.480+0100 2024-03-11 13:02:05,480 [INFO] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-11T13:02:05.731+0100 2024-03-11 13:02:05,731 [INFO] Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-11T13:02:05.850+0100 2024-03-11 13:02:05,850 [INFO] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-11T13:02:06.571+0100 2024-03-11 13:02:06,571 [INFO] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-11T13:02:08.388+0100 2024-03-11 13:02:08,388 [INFO] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-11T13:02:08.466+0100 2024-03-11 13:02:08,466 [INFO] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-11T13:02:09.156+0100 2024-03-11 13:02:09,156 [INFO] QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-11T13:02:10.197+0100 2024-03-11 13:02:10,197 [INFO] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-03-11T13:02:10.817+0100 2024-03-11 13:02:10,817 [INFO] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-11T13:02:10.857+0100 2024-03-11 13:02:10,857 [INFO] TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-11T13:02:10.880+0100 2024-03-11 13:02:10,880 [INFO] EjercicioBancoSpringApplication - Started EjercicioBancoSpringApplication in 11.565 seconds (process running for 14.142)
+2024-03-11T13:02:11.653+0100 2024-03-11 13:02:11,653 [INFO] [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-11T13:02:11.653+0100 2024-03-11 13:02:11,653 [INFO] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-11T13:02:11.656+0100 2024-03-11 13:02:11,656 [INFO] DispatcherServlet - Completed initialization in 2 ms
+2024-03-11T13:02:11.971+0100 2024-03-11 13:02:11,971 [INFO] ApplicationController - Intento de transferencia con cantidad nula o negativa, cuentas: ES2114650100722030876293 - ES331415B202015555555555
+2024-03-11T13:02:17.593+0100 2024-03-11 13:02:17,593 [INFO] ApplicationController - Intento de transferencia con cantidad nula o negativa, cuentas: ES2114650100722030876293 - ES331415B202015555555555
+2024-03-11T13:02:33.302+0100 2024-03-11 13:02:33,302 [INFO] AccountService - Se ha creado una cuenta nueva: Paco - ES4291514040202532804
+2024-03-11T13:03:42.923+0100 2024-03-11 13:03:42,923 [INFO] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-11T13:03:42.964+0100 2024-03-11 13:03:42,964 [INFO] HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-11T13:03:43.013+0100 2024-03-11 13:03:43,013 [INFO] HikariDataSource - HikariPool-1 - Shutdown completed.

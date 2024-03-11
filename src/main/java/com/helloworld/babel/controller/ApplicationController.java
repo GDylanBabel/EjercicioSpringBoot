@@ -6,6 +6,7 @@ import com.helloworld.babel.service.IAccountService;
 import com.helloworld.babel.service.ITransferenceService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.message.ParameterizedMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,6 +36,10 @@ public class ApplicationController {
     public String createUserTransference(@RequestParam String sender, @RequestParam String reciever, @RequestParam double amount) {
         Account accountSender = getAccountByCode(sender);
         Account accountReciever = getAccountByCode(reciever);
+        if (amount <= 0) {
+            logger.info(new ParameterizedMessage("Intento de transferencia con cantidad nula o negativa, cuentas: {} - {}", sender, reciever));
+            return "No se pueden hacer transferencias negativas o sin cantidad";
+        }
         if (accountSender == null || accountReciever == null) {
             logger.info("Intento de transferencia con cuentas inexistentes");
             return "Error, cuenta no existente";
@@ -45,12 +50,20 @@ public class ApplicationController {
 
     @RequestMapping(value = "/storeIncome", method = RequestMethod.POST)
     public String storeIncome(@RequestParam double amount, @RequestParam String userAccount) {
+        if (amount <= 0) {
+            logger.error(new ParameterizedMessage("Ingreso con cantidad invalidad intentado con cuenta: {}", userAccount));
+            return "Ingreso invalido";
+        }
         this.accountService.storeIncome(amount, getAccountByCode(userAccount));
         return "Ingreso realizado";
     }
 
     @RequestMapping(value = "/withdrawIncome", method = RequestMethod.POST)
     public double withdrawIncome(@RequestParam double amount, @RequestParam String userAccount) {
+        if (amount <= 0) {
+            logger.error(new ParameterizedMessage("Retirada de ingresos con cantidad invalidad intentado con cuenta: {}", userAccount,
+                    new IllegalArgumentException()));
+        }
         return this.accountService.withdrawIncome(amount, getAccountByCode(userAccount));
     }
 
